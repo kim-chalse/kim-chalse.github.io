@@ -12,3 +12,12 @@
     <div id="app"></div>
   </body>
 </html>
+<script>
+  // 404.html에서 redirect 정보를 받아오고, 원래 요청한 URL로 라우터 이동
+  const redirect = sessionStorage.redirect;
+  if (redirect) {
+    sessionStorage.removeItem('redirect');
+    window.history.replaceState(null, '', redirect);
+  }
+</script>
+
